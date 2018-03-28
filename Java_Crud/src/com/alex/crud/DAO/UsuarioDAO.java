@@ -4,75 +4,75 @@
  * and open the template in the editor.
  */
 package com.alex.Crud.DAO;
+
 import com.alex.Crud.Model.Usuario;
 import com.alex.Crud.ConexaoBanco.ConexaoMySQL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class UsuarioDAO {
-    
-    public void save(Usuario usuario){
-        String sql="INSERT INTO user(UserName,Senha,Nome,Email,Celular,TelFixo,Cidade,Estado)" +"values(?,?,?,?,?,?,?,?)";
-        Connection conn=null;
-        PreparedStatement pstm=null;
-        
+
+    public void save(Usuario usuario) {
+        String sql = "INSERT INTO user(UserName,Senha,Nome,Email,Celular,TelFixo,Cidade,Estado)" + "values(?,?,?,?,?,?,?,?)";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
         try {
-            conn=ConexaoMySQL.createConnectionToMySQL();
-            pstm=conn.prepareStatement(sql);
-            
-            pstm.setString(1,usuario.getUserName());
-            pstm.setString(2,usuario.getSenha());
-            pstm.setString(3,usuario.getNome());
-            pstm.setString(4,usuario.getEmail());
-            pstm.setString(5,usuario.getCelular());
-            pstm.setString(6,usuario.getTelFixo());
-            pstm.setString(7,usuario.getCidade());
-            pstm.setString(8,usuario.getEstado());
-            pstm.execute();
+            conn = ConexaoMySQL.createConnectionToMySQL();
+            pstm = conn.prepareStatement(sql);
+
+            pstm.setString(1, usuario.getUserName());
+            pstm.setString(2, usuario.getSenha());
+            pstm.setString(3, usuario.getNome());
+            pstm.setString(4, usuario.getEmail());
+            pstm.setString(5, usuario.getCelular());
+            pstm.setString(6, usuario.getTelFixo());
+            pstm.setString(7, usuario.getCidade());
+            pstm.setString(8, usuario.getEstado());
+            pstm.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
-                if(pstm!=null){
+                if (pstm != null) {
                     pstm.close();
                     System.out.println("Usuário Cadastrado com Sucesso!");
                 }
-                if(conn!=null){
-                    conn.close();   
+                if (conn != null) {
+                    conn.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-               
+
             }
         }
     }
-    
-    public void removeById(int id){
-        String sql="DELETE from user where idUser=?";
-        Connection conn=null;
-        PreparedStatement pstm=null;
-        
+
+    public void removeById(int id) {
+        String sql = "DELETE from user where iduser=?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
         try {
-            conn=ConexaoMySQL.createConnectionToMySQL();
-            pstm=conn.prepareStatement(sql);
+            conn = ConexaoMySQL.createConnectionToMySQL();
+            pstm = conn.prepareStatement(sql);
             pstm.setInt(1, id);
-            pstm.execute();
+            pstm.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
-                 if(pstm!=null){
-                pstm.close();
-                System.out.println("Usuário Excluído com Sucesso!");
+                if (pstm !=null) {
+                    System.out.println("Usuário Excluído com Sucesso!");
+                    pstm.close();
                 }
-                 if(conn!=null){
-                     conn.close();
-                 }
+                if (conn != null) {
+                    conn.close();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-    
-    
+
 }

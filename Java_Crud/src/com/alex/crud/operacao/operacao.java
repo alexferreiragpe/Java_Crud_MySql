@@ -1,7 +1,4 @@
-
-import com.alex.Crud.DAO.UsuarioDAO;
-import com.alex.Crud.Model.Usuario;
-
+package com.alex.crud.operacao;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,30 +6,34 @@ import com.alex.Crud.Model.Usuario;
  * and open the template in the editor.
  */
 
+
+import com.alex.Crud.DAO.UsuarioDAO;
+import com.alex.Crud.Model.Usuario;
+
 /**
  *
- * @author alexf
+ * @author alexferreira
  */
-public class Operacao {
+public class operacao {
+    
     
     public static void main(String args[]){
-        
         UsuarioDAO usuarioDao=new UsuarioDAO();
         Usuario usuario=new Usuario();
      
         
-           
-        usuario.setUserName("adkf");
+        
+        usuario.setUserName("dfd");
         usuario.setSenha("90899");
-        usuario.setNome("Ganodfd");
-        usuario.setEmail("cdfsdfasdfrisdfd141@uol.com.br");
+        usuario.setNome("Gadnodfd");
+        usuario.setEmail("cdfsdfdasdfrisdfd141@uol.com.br");
         usuario.setCelular("19-99760-9890");
         usuario.setTelFixo("19-3789-7689");
         usuario.setCidade("Guaxupé");
         usuario.setEstado("MG");
         usuarioDao.save(usuario);
         
-        usuarioDao.removeById(18);
+        usuarioDao.removeById(27);
     }
-    
+   
 }
