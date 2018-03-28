@@ -24,7 +24,7 @@ public class operacao {
         usuario.setSenha("90899");
         usuario.setNome("Alex Ferreiraa");
         usuario.setEmail("frisdfd14a1@uol.com.br");
-        usuario.setCelular("19-99760-9890");
+        usuario.setCelular("19-99760-9090");
         usuario.setTelFixo("19-3789-7689");
         usuario.setCidade("Guaxupé");
         usuario.setEstado("MG");
@@ -36,7 +36,7 @@ public class operacao {
         
         //Atualiza o Usuario com id = "" com os dados do objeto user//    
         
-        Usuario user = new Usuario();
+        /*Usuario user = new Usuario();
         user.setIdUser(31);
         user.setUserName("teste");
         user.setSenha("90d899");
@@ -46,7 +46,7 @@ public class operacao {
         user.setTelFixo("19-3789-7689");
         user.setCidade("Guaxupé");
         user.setEstado("MG");                
-        usuarioDao.update(user);
+        usuarioDao.update(user);*/
          
         
         //Lista todos os contatos do banco de dados//
