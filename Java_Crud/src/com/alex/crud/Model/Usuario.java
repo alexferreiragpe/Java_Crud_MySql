@@ -10,6 +10,7 @@ package com.alex.Crud.Model;
  * @author alexf
  */
 public class Usuario {
+
     private int idUser;
     private String UserName;
     private String Senha;
@@ -91,5 +92,5 @@ public class Usuario {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
-    
+
 }
