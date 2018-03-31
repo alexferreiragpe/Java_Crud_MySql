@@ -7,6 +7,7 @@ package com.alex.crud.operacao;
  */
 import com.alex.Crud.DAO.UsuarioDAO;
 import com.alex.Crud.Model.Usuario;
+import java.util.Date;
 
 /**
  *
@@ -20,14 +21,15 @@ public class operacao {
 
         //Cria um Usuario e salva no banco//
         
-        /*usuario.setUserName("alexferreira2");
-        usuario.setSenha("90899");
-        usuario.setNome("Alex Ferreiraa");
-        usuario.setEmail("frisdfd14a1@uol.com.br");
-        usuario.setCelular("19-99760-9090");
+       /* usuario.setUserName("aaaaaa");
+        usuario.setSenha("908d99");
+        usuario.setNome("aaaaaaaaaaaaaLoredfdfdfna");
+        usuario.setEmail("aaaaaaaaaafrisadfddfd14aa1@uol.com.br");
+        usuario.setCelular("aaa19-993760-9080");
         usuario.setTelFixo("19-3789-7689");
         usuario.setCidade("Guaxupé");
         usuario.setEstado("MG");
+        usuario.setDataCadastro(new Date());
         usuarioDao.save(usuario);*/
 
         //Remove o Usuario com idUser=//
@@ -36,22 +38,24 @@ public class operacao {
         
         //Atualiza o Usuario com id = "" com os dados do objeto user//    
         
-        /*Usuario user = new Usuario();
-        user.setIdUser(31);
-        user.setUserName("teste");
+        Usuario user = new Usuario();
+        user.setIdUser(1);
+        user.setUserName("5aaaaaa");
         user.setSenha("90d899");
-        user.setNome("Cristina");
-        user.setEmail("cristina@uol.com.br");
-        user.setCelular("19-99760-9890");
+        user.setNome("ca");
+        user.setEmail("@uol.com.brxxx");
+        user.setCelular("0-9890xxx");
         user.setTelFixo("19-3789-7689");
         user.setCidade("Guaxupé");
-        user.setEstado("MG");                
-        usuarioDao.update(user);*/
+        user.setEstado("MG");  
+        user.setDataCadastro(new Date());
+        usuarioDao.update(user);
          
         
         //Lista todos os contatos do banco de dados//
         for (Usuario u : usuarioDao.getUsuarios()) {
             System.out.println("Usuário -->  " + u.getUserName());
+            System.out.println("DataCadastro -->  " + u.getDataCadastro());
         }
 
     }

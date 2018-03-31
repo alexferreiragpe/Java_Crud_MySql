@@ -8,6 +8,7 @@ package com.alex.Crud.DAO;
 import com.alex.Crud.Model.Usuario;
 import com.alex.Crud.ConexaoBanco.ConexaoMySQL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class UsuarioDAO {
 
     public void save(Usuario usuario) {
 
-        String sql = "INSERT INTO user(UserName,Senha,Nome,Email,Celular,TelFixo,Cidade,Estado)" + "values(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO user(UserName,Senha,Nome,Email,Celular,TelFixo,Cidade,Estado,DataCadastro)" + "values(?,?,?,?,?,?,?,?,?)";
         Connection conn = null;
         PreparedStatement pstm = null;
 
@@ -33,6 +34,7 @@ public class UsuarioDAO {
             pstm.setString(6, usuario.getTelFixo());
             pstm.setString(7, usuario.getCidade());
             pstm.setString(8, usuario.getEstado());
+            pstm.setDate(9,new Date(usuario.getDataCadastro().getTime()));
             pstm.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,8 +84,7 @@ public class UsuarioDAO {
 
     public void update(Usuario usuario) {
 
-        String sql = "UPDATE user SET UserName=?,Senha=?,Nome=?,Email=?,Celular=?,TelFixo=?,Cidade=?,Estado=?"
-                + "where iduser=?";
+        String sql = "UPDATE user SET UserName=?,Senha=?,Nome=?,Email=?,Celular=?,TelFixo=?,Cidade=?,Estado=?,DataCadastro=? where iduser=?";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -100,7 +101,8 @@ public class UsuarioDAO {
             pstm.setString(6, usuario.getTelFixo());
             pstm.setString(7, usuario.getCidade());
             pstm.setString(8, usuario.getEstado());
-            pstm.setInt(9, usuario.getIdUser());
+            pstm.setDate(9,new Date(usuario.getDataCadastro().getTime()));
+            pstm.setInt(10, usuario.getIdUser());
             pstm.executeUpdate();
 
         } catch (Exception e) {
@@ -147,7 +149,7 @@ public class UsuarioDAO {
                 usuario.setTelFixo(rset.getString("TelFixo"));
                 usuario.setCidade(rset.getString("Cidade"));
                 usuario.setEstado(rset.getString("Estado"));
-
+                usuario.setDataCadastro(rset.getDate("DataCadastro"));    
                 usuarios.add(usuario);
             }
         } catch (Exception e) {

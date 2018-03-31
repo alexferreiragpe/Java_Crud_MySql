@@ -5,6 +5,8 @@
  */
 package com.alex.Crud.Model;
 
+import java.util.Date;
+
 /**
  *
  * @author alexf
@@ -20,6 +22,7 @@ public class Usuario {
     private String TelFixo;
     private String Cidade;
     private String Estado;
+    private Date DataCadastro;
 
     public int getIdUser() {
         return idUser;
@@ -91,6 +94,14 @@ public class Usuario {
 
     public void setEstado(String Estado) {
         this.Estado = Estado;
+    }
+
+    public Date getDataCadastro() {
+        return DataCadastro;
+    }
+
+    public void setDataCadastro(Date DataCadastro) {
+        this.DataCadastro = DataCadastro;
     }
 
 }
