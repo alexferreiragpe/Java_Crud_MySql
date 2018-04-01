@@ -21,41 +21,41 @@ public class operacao {
 
         //Cria um Usuario e salva no banco//
         
-       /* usuario.setUserName("aaaaaa");
-        usuario.setSenha("908d99");
-        usuario.setNome("aaaaaaaaaaaaaLoredfdfdfna");
-        usuario.setEmail("aaaaaaaaaafrisadfddfd14aa1@uol.com.br");
-        usuario.setCelular("aaa19-993760-9080");
-        usuario.setTelFixo("19-3789-7689");
-        usuario.setCidade("Guaxupé");
-        usuario.setEstado("MG");
+      /*  usuario.setUserName("alexferreira");
+        usuario.setSenha("12345");
+        usuario.setNome("Alex Ferreira");
+        usuario.setEmail("alexferreira@hotmail.com.br");
+        usuario.setCelular("19-98803-0727");
+        usuario.setTelFixo("19-8803-0727");
+        usuario.setCidade("Campinas");
+        usuario.setEstado("SP");
         usuario.setDataCadastro(new Date());
         usuarioDao.save(usuario);*/
 
-        //Remove o Usuario com idUser=//
+        //Remove o Usuario com idUser=
         
-        //usuarioDao.removeById(27);
+        //usuarioDao.removeById(35);
         
         //Atualiza o Usuario com id = "" com os dados do objeto user//    
         
-        Usuario user = new Usuario();
-        user.setIdUser(1);
-        user.setUserName("5aaaaaa");
+      /* Usuario user = new Usuario();
+        user.setIdUser(35);
+        user.setUserName("analic");
         user.setSenha("90d899");
-        user.setNome("ca");
-        user.setEmail("@uol.com.brxxx");
-        user.setCelular("0-9890xxx");
+        user.setNome("analic");
+        user.setEmail("analic@uol.com.brxxx");
+        user.setCelular("80-99999");
         user.setTelFixo("19-3789-7689");
         user.setCidade("Guaxupé");
         user.setEstado("MG");  
         user.setDataCadastro(new Date());
-        usuarioDao.update(user);
+        usuarioDao.update(user);*/
          
         
         //Lista todos os contatos do banco de dados//
         for (Usuario u : usuarioDao.getUsuarios()) {
             System.out.println("Usuário -->  " + u.getUserName());
-            System.out.println("DataCadastro -->  " + u.getDataCadastro());
+            ///System.out.println("DataCadastro -->  " + u.getDataCadastro());
         }
 
     }

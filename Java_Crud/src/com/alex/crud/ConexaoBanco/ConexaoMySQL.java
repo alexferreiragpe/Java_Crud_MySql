@@ -15,13 +15,20 @@ import java.sql.DriverManager;
 public class ConexaoMySQL {
 
     //Nome do usuário do mysql
-    private static final String USERNAME = "root";
+   // private static final String USERNAME = "root";
 
     //Senha do mysql
-    private static final String PASSWORD = "";
+    //private static final String PASSWORD = "";
 
     //Dados de caminho, porta e nome da base de dados que irá ser feita a conexão
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/dados";
+   // private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/dados";
+    
+    
+    // hostinger remoto
+    
+    private static final String DATABASE_URL = "jdbc:mysql://sql136.main-hosting.eu/u418628712_dados";
+    private static final String USERNAME = "xxxxx";
+    private static final String PASSWORD = "xxxxx";
 
     /**
      * Cria uma conexão com o banco de dados MySQL utilizando o nome de usuário
